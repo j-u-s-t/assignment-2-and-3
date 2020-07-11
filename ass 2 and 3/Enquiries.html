@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home Page</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<body>
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		  <a class="navbar-brand" href="#">Dees Food Outlet</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarNav">
+		    <ul class="navbar-nav">
+		      <li class="nav-item ">
+		        <a class="nav-link" href="index.html">Home <span class="sr-only"></span></a>
+			  </li>
+			  <li class="nav-item">
+		        <a class="nav-link" href="Servives.html">Enquires</a>
+			  </li>
+		      <li class="nav-item">
+		        <a class="nav-link active" href="#">Services</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="About.html">About</a>
+			  </li>
+			 
+		     
+		    </ul>
+		  </div>
+		</nav>
+	</header>
+
+	<section id="enquiries">
+		<form  name ="myform" onsubmit="return false" >
+		  <label for="name">Name</label><br>
+		  <input type="text" id ="name" name="name" title="Your name" placeholder="name"><br>
+		  <label for="number">Number</label><br>
+		  <input type="number" name="number" title="phone number" placeholder="number"><br>
+		  <label for="email">Email</label><br>
+		  <input type="email" name ="email" title="email" placeholder="@gmail.com"><br>
+		  <label for="memo">Enquiry</label><br>
+		  <textarea name="memo" id="" cols="30" rows="8" placeholder="mymessage" title="Your enquiry"></textarea>
+		  <input type="submit" value="Submit">
+		 <script>
+			  function validatemyform(){
+				  let check = 0;
+				  var name = document.forms["myform"]["name"].value;
+				  let letters = /^[a-zA-Z]+$/;
+				  if (name==""){
+					  alert("write your name");
+					  check = 1;
+					  return false;
+					  
+				  }else{
+					  if(!name.match(letters)){
+						  alert("Name must be Alphabetical letters only");
+						  check = 1;
+						  return false;
+	  
+					  }
+				  }
+	  
+				  /* phone number*/
+				  let number = document.forms["myform"]["number"].value;
+				  if(number == ""){
+					  alert("Number must not be empty");
+					  check =1;
+					  return false;
+				  }else{
+					  if(number.match(letters)){
+						  alert("Your phone number must is not valid, must be numbers only");
+						  check=1;
+						  return false;
+					  }
+					  
+				  }
+				  /*email*/
+				  let email = document.forms["myform"]["email"].value;
+				  if (email==""){
+					  alert("Email must not be empty");
+					  check=1;
+					  return false;
+				  }
+	  
+				 /*enquiry*/
+				 let enquiry = document.forms["myform"]["memo"].value;
+				 if(enquiry == ""){
+					 alert("Enquiry must not be empty");
+					 check=1;
+					 return false;
+				 }
+				  
+				 if(check==0){
+					  alert("Successful");
+					  
+					  //location.reload();
+					  document.name.name.value="";
+				  
+					  return false;
+				  } 
+				  
+	  
+			  }
+			
+			  
+			  var form = document.forms["myform"];
+			  form.onsubmit=validatemyform;
+		 </script>
+	  </form>
+</html>

@@ -1,0 +1,35 @@
+.parallax{
+    /*image*/
+    background-image: url('../images/line.jpg');
+    /* has to fill up the entire view*/
+    height: 100%;
+  
+    /*creating the scrolling magic*/
+    margin-bottom: 2px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+/*
+    adding some color to the text in the parrallax
+*/
+.parallax{
+   
+    padding-top: 30%;
+    text-align: center;
+    color: green;
+}
+.dark{
+    background-color: green;
+    padding-bottom: 0%;
+    text-align: center;
+}
+.about{
+    text-align: center;
+}
+#body{
+    background-color: rgb(144, 228, 144);
+}
